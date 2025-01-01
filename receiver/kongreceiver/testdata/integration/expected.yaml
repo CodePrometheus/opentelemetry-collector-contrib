@@ -1,0 +1,56 @@
+resourceMetrics:
+  - resource: {}
+    scopeMetrics:
+      - metrics:
+          - description: The current number of nginx connections by state
+            name: kong.nginx.connections_total
+            sum:
+              aggregationTemporality: 2
+              dataPoints:
+                - asInt: "28"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: accepted
+                  timeUnixNano: "1000000"
+                - asInt: "12"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: active
+                  timeUnixNano: "1000000"
+                - asInt: "28"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: handled
+                  timeUnixNano: "1000000"
+                - asInt: "0"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: reading
+                  timeUnixNano: "1000000"
+                - asInt: "28"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: total
+                  timeUnixNano: "1000000"
+                - asInt: "0"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: waiting
+                  timeUnixNano: "1000000"
+                - asInt: "12"
+                  attributes:
+                    - key: state
+                      value:
+                        stringValue: writing
+                  timeUnixNano: "1000000"
+              isMonotonic: true
+            unit: connections
+        scope:
+          name: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kongreceiver
+          version: latest

@@ -1,0 +1,104 @@
+# HELP kong_bandwidth_bytes Total bandwidth (ingress/egress) throughput in bytes
+# TYPE kong_bandwidth_bytes counter
+kong_bandwidth_bytes{service="otel-service",route="otel-route",direction="egress",workspace="default",consumer=""} 975
+kong_bandwidth_bytes{service="otel-service",route="otel-route",direction="ingress",workspace="default",consumer=""} 90
+# HELP kong_datastore_reachable Datastore reachable from Kong, 0 is unreachable
+# TYPE kong_datastore_reachable gauge
+kong_datastore_reachable 1
+# HELP kong_http_requests_total HTTP status codes per consumer/service/route in Kong
+# TYPE kong_http_requests_total counter
+kong_http_requests_total{service="otel-service",route="otel-route",code="200",source="service",workspace="default",consumer=""} 1
+# HELP kong_kong_latency_ms Latency added by Kong and enabled plugins for each service/route in Kong
+# TYPE kong_kong_latency_ms histogram
+kong_kong_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="500"} 1
+kong_kong_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="750"} 1
+kong_kong_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="1000"} 1
+kong_kong_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="+Inf"} 1
+kong_kong_latency_ms_count{service="otel-service",route="otel-route",workspace="default"} 1
+kong_kong_latency_ms_sum{service="otel-service",route="otel-route",workspace="default"} 320
+# HELP kong_memory_lua_shared_dict_bytes Allocated slabs in bytes in a shared_dict
+# TYPE kong_memory_lua_shared_dict_bytes gauge
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_cluster_events",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_core_db_cache",kong_subsystem="http"} 798720
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_core_db_cache_miss",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_db_cache",kong_subsystem="http"} 794624
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_db_cache_miss",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_healthchecks",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_locks",kong_subsystem="http"} 61440
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_rate_limiting_counters",kong_subsystem="http"} 90112
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_secrets",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="prometheus_metrics",kong_subsystem="http"} 49152
+# HELP kong_memory_lua_shared_dict_total_bytes Total capacity in bytes of a shared_dict
+# TYPE kong_memory_lua_shared_dict_total_bytes gauge
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_cluster_events",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_core_db_cache",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_core_db_cache_miss",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_db_cache",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_db_cache_miss",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_healthchecks",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_locks",kong_subsystem="http"} 8388608
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_rate_limiting_counters",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="kong_secrets",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",shared_dict="prometheus_metrics",kong_subsystem="http"} 5242880
+# HELP kong_memory_workers_lua_vms_bytes Allocated bytes in worker Lua VM
+# TYPE kong_memory_workers_lua_vms_bytes gauge
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1404",kong_subsystem="http"} 54779038
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1405",kong_subsystem="http"} 54411787
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1406",kong_subsystem="http"} 54381982
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1407",kong_subsystem="http"} 54381982
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1408",kong_subsystem="http"} 54381982
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1409",kong_subsystem="http"} 54381978
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1410",kong_subsystem="http"} 54380131
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1411",kong_subsystem="http"} 54380753
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1412",kong_subsystem="http"} 54380135
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1413",kong_subsystem="http"} 54925580
+kong_memory_workers_lua_vms_bytes{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",pid="1414",kong_subsystem="http"} 54380831
+# HELP kong_nginx_connections_total Number of connections by subsystem
+# TYPE kong_nginx_connections_total gauge
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="accepted"} 28
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="active"} 12
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="handled"} 28
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="reading"} 0
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="total"} 28
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="waiting"} 0
+kong_nginx_connections_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http",state="writing"} 12
+# HELP kong_nginx_metric_errors_total Number of nginx-lua-prometheus errors
+# TYPE kong_nginx_metric_errors_total counter
+kong_nginx_metric_errors_total 0
+# HELP kong_nginx_requests_total Number of requests total
+# TYPE kong_nginx_requests_total gauge
+kong_nginx_requests_total{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",subsystem="http"} 28
+# HELP kong_nginx_timers Number of nginx timers
+# TYPE kong_nginx_timers gauge
+kong_nginx_timers{state="pending"} 1
+kong_nginx_timers{state="running"} 257
+# HELP kong_node_info Kong Node metadata information
+# TYPE kong_node_info gauge
+kong_node_info{node_id="b232c66b-4179-43f6-9f28-6dd17c723e87",version="3.8.0"} 1
+# HELP kong_request_latency_ms Total latency incurred during requests for each service/route in Kong
+# TYPE kong_request_latency_ms histogram
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="700"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="1000"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="2000"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="5000"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="10000"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="30000"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="60000"} 1
+kong_request_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="+Inf"} 1
+kong_request_latency_ms_count{service="otel-service",route="otel-route",workspace="default"} 1
+kong_request_latency_ms_sum{service="otel-service",route="otel-route",workspace="default"} 626
+# HELP kong_upstream_latency_ms Latency added by upstream response for each service/route in Kong
+# TYPE kong_upstream_latency_ms histogram
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="400"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="700"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="1000"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="2000"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="5000"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="10000"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="30000"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="60000"} 1
+kong_upstream_latency_ms_bucket{service="otel-service",route="otel-route",workspace="default",le="+Inf"} 1
+kong_upstream_latency_ms_count{service="otel-service",route="otel-route",workspace="default"} 1
+kong_upstream_latency_ms_sum{service="otel-service",route="otel-route",workspace="default"} 305

@@ -1,0 +1,24 @@
+_format_version: "3.0"
+
+services:
+  - name: otel-service
+    host: httpbin.konghq.com
+    port: 80
+    protocol: http
+    routes:
+      - name: otel-route
+        paths:
+          - /mock
+
+plugins:
+  - name: rate-limiting
+    config:
+      minute: 5
+      policy: local
+  - name: prometheus
+    config:
+      per_consumer: true
+      status_code_metrics: true
+      latency_metrics: true
+      bandwidth_metrics: true
+      upstream_health_metrics: true

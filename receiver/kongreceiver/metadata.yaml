@@ -1,0 +1,60 @@
+type: kong
+
+status:
+  class: receiver
+  stability:
+    alpha: [ metrics ]
+  distributions: [ contrib ]
+  codeowners:
+    active: [ Zixin Zhou ]
+    seeking_new: true
+
+resource_attributes:
+  kong.instance.endpoint:
+    description: Endpoint of the Kong instance.
+    enabled: true
+    type: string
+
+attributes:
+  state:
+    description: The state of a connection
+    type: string
+    enum:
+      - accepted
+      - active
+      - handled
+      - reading
+      - total
+      - waiting
+      - writing
+  direction:
+    description: The direction of the bandwidth
+    type: string
+    enum:
+      - ingress
+      - egress
+
+metrics:
+  kong.bandwidth_bytes:
+    enabled: true
+    description: Total bandwidth (ingress/egress) throughput in bytes
+    unit: bytes
+    sum:
+      value_type: int
+      input_type: string
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: [ direction ]
+  kong.nginx.connections_total:
+    enabled: true
+    description: The current number of nginx connections by state
+    unit: connections
+    sum:
+      value_type: int
+      input_type: string
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: [ state ]
+
+tests:
+  config:
