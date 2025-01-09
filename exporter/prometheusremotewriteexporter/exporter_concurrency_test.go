@@ -5,9 +5,11 @@ package prometheusremotewriteexporter
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"strconv"
 	"sync"
 	"testing"
@@ -31,6 +33,10 @@ import (
 // Test everything works when there is more than one goroutine calling PushMetrics.
 // Today we only use 1 worker per exporter, but the intention of this test is to future-proof in case it changes.
 func Test_PushMetricsConcurrent(t *testing.T) {
+	fmt.Println("Test_PushMetricsConcurrent|ImageOs = ", os.Getenv("ImageOs"))
+	if os.Getenv("ImageOs") == "win25" && os.Getenv("GITHUB_ACTIONS") == "true" {
+		t.Skip("Skipping test on Windows 2025 GH runners, see https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/37104")
+	}
 	n := 1000
 	ms := make([]pmetric.Metrics, n)
 	testIDKey := "test_id"
